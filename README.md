@@ -9,20 +9,21 @@ The dataset was created considering three fields present in the dump for a given
 
 Run all you code from the root directory of the repository, the steps to create the dataset are as follows:
 
-1. Downlaod the raw data:<br>$ ./scripts/download_dataset.sh
+1. Downlaod the raw data:<br>`$ ./scripts/download_dataset.sh`
 
 2. Fill the config file properly 
 Config file is present at `./config/amazon_paths.py`, please provide approriate path variable in the file for the scripts to run properly, an example is provided here.<br>
+`verbose` = True<br>
+`limit` = None<br>
 `dataset_home` = '/home/scai/phd/aiz218323/scratch/XML/amazon-review-data/'<br>
 `amazon_file` = f'{dataset_home}/datasets/All_Amazon_Meta.json.gz'<br>
 `save_dir` = f'{dataset_home}/GraphAmazonProducts/results'<br>
 `xc_dir` = f'{dataset_home}/GraphAmazonProducts/XCData'<br>
-`duplicates_file` = f'{dataset_home}/datasets/duplicates.txt'<br>
-`verbose` = True<br>
-`limit` = None
+`duplicates_file` = f'{dataset_home}/datasets/duplicates.txt'
+
 
 3. Run the main script to create the dataset<br> 
-$ python src/generate_amazon_graph.py
+`$ python src/generate_amazon_graph.py`
 
 
 Here are some statistics of the dataset:
