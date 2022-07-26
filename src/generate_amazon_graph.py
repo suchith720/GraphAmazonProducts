@@ -61,6 +61,7 @@ if __name__ == '__main__':
         print("++ Replacing duplicate product IDs with a representative product ID.")
     amazon_graphs.load_graph(save_dir, tag='_resolved', graph_type='similar')
     amazon_graphs.replace_graph_duplicates(duplicates)
+    amazon_graphs.remove_dead()
     amazon_graphs.convert_graph()
     amazon_graphs.save_graphs(save_dir, tag='_dict')
 

@@ -50,3 +50,20 @@ def load_duplicates_map(duplicates_file):
 
     return duplicates
 
+
+def load_duplicates_map(duplicate_file, id_to_title):
+    duplicates = {}
+
+    with open(duplicates_file) as file:
+        for line in file:
+            product_ids = line[:-1].split(' ')
+
+            representative_id = None
+            if len(product_ids):
+                for product_id in product_ids:
+                    if product_id in id_to_title:
+                        if representative_id is None:
+                            representative_id = product_id
+                        duplicates[product_id] = representative_id
+
+    return duplicates

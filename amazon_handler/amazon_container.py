@@ -58,11 +58,13 @@ class AmazonGraphContainer:
             self.graphs[graph_type].convert_graph()
 
     def create_graph(self, filename, limit=None):
+
         for i, product in enumerate(parse(filename)):
 
             similar_items = extract_similar_items(product['similar_item'])
 
-            if len(product['also_view']) or len(product['also_buy']) or len(similar_items):
+            if (len(product['also_view']) or len(product['also_buy']) or len(similar_items)) \
+            and len(product['title']) and len(product['asin']):
                 product_id = product['asin']
 
                 self.id_to_title[product_id] = product['title']
@@ -73,8 +75,8 @@ class AmazonGraphContainer:
                     self.graphs['also_buy'].add_product(product_id, product['also_buy'])
                 if len(similar_items):
                     self.graphs['similar'].add_product(product_id, similar_items)
-
-                self.description[product_id] = product['description']
+                if len(product['description']):
+                    self.description[product_id] = product['description']
 
             if limit is not None and i > limit:
                 break

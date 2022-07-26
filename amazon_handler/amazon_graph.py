@@ -59,3 +59,30 @@ class AmazonGraph:
             else:
                 raise Exception("Invalid graph format.")
 
+    def remove_dead(self, id_to_title):
+        delete_nodes = []
+        for product_id, (edges, counts) in self.graph.items():
+            active_edges = list()
+            active_counts = list()
+
+            if product_id in id_to_title and id_to_title[product_id]:
+                while edges:
+                    edge = edges.pop()
+                    count = counts.pop()
+
+                    if edge in id_to_title and id_to_title[edge]:
+                        active_edges.append(edge)
+                        active_counts.append(count)
+
+                if len(active_edges):
+                    self.graph[product_id] = (active_edges, active_counts)
+                else:
+                    delete_nodes.append(product_id)
+            else:
+                delete_nodes.append(product_id)
+
+        for node in delete_nodes:
+            del self.graph[node]
+        return None
+
+
