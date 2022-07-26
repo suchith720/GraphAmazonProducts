@@ -33,11 +33,11 @@ duplicates_file = f'{dataset_home}/datasets/duplicates.txt'
 Here are some statistics of the dataset:
 
 
-field/properties | number of labels |	number of train |	number of test | points per label |	labels per point
+field/properties | number of labels |	number of train |	number of test | points per label	| labels per point
 --- | --- | --- | --- | --- | --- 
-also_buy | 1,789,597 | 1,615,853 |	693,828	| 18.051807	| 1.0
-also_view |	1,916,605 |	1871815 |	804513 |	11.825021 |	1.0
-similar items | 388,506 |	840,811 | 361,725 | 6.297820 | 1.0
+also_buy	| 1,591,824	| 1,502,829	| 645,683 |	16.246278	|	3.0
+also_view | 1,712,182 | 1,722,517 |	742,851	| 10.785238	|	1.0
+similar items | 388,544 | 840,754 | 361,756 | 6.297799 |	1.0
 
 ## Baselines
 
