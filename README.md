@@ -3,7 +3,7 @@
 This is product-to-product recommendation dataset.
 The link to the raw dataset can be obtained from the following [link](http://deepyeti.ucsd.edu/jianmo/amazon/index.html). If this link does not work please contact me for the dumps. This dataset was primarily created for Extreme classification task, to improve the accuracy of the classification by using additional information in the form of graphs present at the data-point side as well as the label side.
 
-The dataset was created considering three fields present in the dump for a given product, these fields are 'also_buy', 'also_view' and 'similar'. Anyone graph can be used for the classification task and the remaining for boosting the accuracy as additional information.
+The dataset was created considering three fields present in the dump for a given product, these fields are 'also_buy', 'also_view' and 'similar'. Anyone graph can be used for the classification task and the remaining for boosting the accuracy as additional information. Click [here](https://owncloud.iitd.ac.in/nextcloud/index.php/s/Y6DsjWNEjgqyk7R) to download the dataset.
 
 
 
